@@ -1,0 +1,190 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Open Sans",Arial,sans-serif;
+/* Variables */
+    --menu-color: black;
+    --menu-link-color: saddlebrown;
+    --menu-link-hover-color: black;
+    --menu-background-color: bisque;
+    --menu-background-sub-color: navajowhite;
+    --menu-background-hover-color: khaki;  
+    --link-color: saddlebrown;  
+    --exercise-background-color: darkgrey;
+    --example-background-color: lightgray;
+}
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+/* MENU SYSTEM */
+nav ul {
+    background: var(--menu-background-color);
+    list-style-type: none;
+    min-width: 1280px;
+}
+nav ul li {
+    padding: .1em .5em .1em .5em;
+    display: inline-block;
+    color: var(--menu-color);
+}
+nav ul li:hover {
+    background: var(--menu-background-hover-color);
+}
+nav ul li a {
+    color: var(--menu-link-color);
+}
+nav ul li a:hover {
+    color: var(--menu-link-hover-color);
+}
+nav ul li img {
+    padding: 0 .3em 0 0;
+    height: 32px;
+    width: 32px;
+}
+nav ul li:first-child img {
+    width: 64px;
+    height: auto;
+}
+nav ul li:hover > ul {
+    background: var(--menu-background-sub-color);
+    display: block;
+}
+nav ul li > ul {
+    display: none;
+    position: absolute;
+    min-width: 10em;
+}
+nav ul li > ul > li {
+    display: block;
+    padding: .1em 2em .1em .5em;
+}
+nav ul li > ul > li > a {
+    display: block;
+}
+
+/* SIDE MENU */
+#sideMenu {
+    width: 42;
+    position: fixed;
+    left: -42;
+    top: 240px;
+    overflow: hidden;
+    transition: left .2s;
+}
+#sideMenu ul {
+    min-width: 42px;
+}
+#sideMenu ul li {
+    width: 42px;
+    display: block;
+}
+#sideMenu ul li:first-child img {
+    width: 34px;
+    height: auto;
+}
+#sideMenu ul li img {
+    display: block;
+    position: a
+}
+
+/* Content Section:
+Initially hide All Content */
+section {
+    margin: 4em 9em 4em 9em;
+}
+article {
+    display: none;
+}
+article h2 {
+    margin: 0 6em 2em 2em;
+    max-width: 20em;
+    min-width: 15em;
+}
+article h3 {
+    margin: 2em 4em 2.4em 4em;
+    max-width: 30em;
+    min-width: 24em;
+}
+article p, article ul {
+    margin: .8em 8em .8em 8em;
+    max-width: 42em;
+    min-width: 28em;
+}
+article pre, article figure {
+    margin: 4em 12em 4em 12em;
+    padding: 2em 1em 2em 2em;
+    max-width: 38em;
+    min-width: 30em;
+    background: var(--example-background-color);
+} 
+figure img {
+    box-shadow: 3px 4px 12px 0px darkgray;
+    text-align: center;
+    width: 80%;
+    height: auto;
+}
+figure figcaption {
+    padding-top: 1em;
+}
+article address {
+    padding: 1em 14em 1em 12em;
+}
+article aside {
+    margin: 4em 8em 4em 8em;
+    padding: 2em 1em 2em 2em;
+    max-width: 38em;
+    min-width: 30em;
+    background: var(--exercise-background-color);
+}
+section article aside h3 {
+    margin: 0;
+    padding: 0 0 1em 0;
+}
+section article aside p {
+    margin: 0;
+}
+section article aside figure {
+    margin: 0;
+}
+section article aside address {
+    margin: 0;
+}
+
+
+@media (min-width: 800px) and (max-width: 1024px) {
+    /* MENU SYSTEM */
+    nav ul {
+        min-width: 800px;
+    }
+    nav ul li:first-child a img {
+        display: inline;
+        width: 48px;
+        height: auto;
+    }
+    nav ul li img {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    nav ul {
+        width: 100%;
+    }
+    nav ul li img {
+        display: inline;
+        height: 32px;
+        width: 32px;
+    }
+    nav ul li a span {
+        display: none;
+    }
+    nav ul li:first-child img {
+        height: 32px;
+        width: 32px;
+    }
+}
