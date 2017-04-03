@@ -55,7 +55,8 @@
                         <li><a href="#javascriptSelectiveDisplay">Show Hide Methods</a></li>
                         <li><a href="#javascriptCheckValidity">Advanced Form Validation</a></li>
                         <li><a href="#javascriptWindowControls">Window Object</a></li>
-                        <li><a href="#javascriptEvents">Layout Elements</a></li>
+                        <li><a href="#javascriptEvents">Event Model</a></li>
+                        <li><a href="#javascriptConsole">JavaScript Console</a></li>
                     </ul>
                 </li>  
                 <li><a href="#effects"><img src="./img/HTML5_3D_Effects_32.png" alt="Effects"/><span>Effects</span></a>
@@ -72,13 +73,18 @@
                         <li><a href="#localstorageSessionstorage">Session Storage Object</a></li>
                         <li><a href="#localstorageLocalstorage">Local Storage Object</a></li>
                         <li><a href="#localstorageGlobalvariables">Declaring Global Variables</a></li>
+                        <li><a href="#localstorageURLparameters">Access URL parameters</a></li>
                     </ul>
                 </li>  
                 <li><a href="#ajax"><img src="./img/HTML5_Connectivity_32.png" alt="AJAX"/><span>AJAX</span></a>
                     <ul>
-                        <li><a href="#ajaxLoad">Load</a></li>
+                        <li><a href="#ajaxGet">Get</a></li>
                         <li><a href="#ajaxPost">Post</a></li>
+                        <li><a href="#ajaxPut">Put</a></li>                      
+                        <li><a href="#ajaxPatch">Patch</a></li>
+                        <li><a href="#ajaxDelete">Delete</a></li>
                         <li><a href="#ajaxJson">JSON</a></li>
+                      
                     </ul>
                 </li>    
                 <li><a href="#hw"><img src="./img/HTML5_Device_Access_32.png" alt="Hardware"/><span>Hardware</span></a>
@@ -163,9 +169,11 @@ article <span style='color:#800080; '>{</span>
             <h3>Are designated to flow across and then down the page occupying as much space as there is content</h3>
             <p>Applying a height and width to an inline object is not possible, one must place inline elements in a block container</p>
             <p>There are very few inline elements in HTML5: <b>&lt;span&gt;</b> would be the most commonly used.</p>
+            <p>Overriding the behaviour of block elements is commonplace, but inline is not the best tool, hybrid styling like inline-block and float are commonly used for compatibility reasons</p>
+            <p></p>
             <aside>
                 <h3>Exercise: Find other elements that are inline</h3>
-                <p>Browse this Internet looking for elements in HTML5 that are inline</p>
+                <p>Browse the Internet looking for elements in HTML5 that are inline</p>
             </aside>
         </article>
         <article id="sementicBlock">
@@ -343,19 +351,19 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
         <article id="css3Inlining">
             <h2>Inline Block Elements</h2>
             <h3>It is common practice to take blocks of content and place them inline to each other</h3>
-            <p>float</p>
-            <p>inline-block</p>
-            <p>table</p>
-            <p>flexbox</p>
-            <p>grid</p>
+            <p>float was a css replacement for the float attribute in the img element. Core use to contol how text flows around images. It can be used in many other situations, because of universal browser compatibility</p>
+          <p>inline-block: commonly used to inline list items <b>&lt;li&gt;</b> that are usually block elements. They have in-built space a negative right margin fixes this</p>
+            <p>table: Emulates CSS layout compatable with the <b>&lt;table&gt;</b> element and all it's children.  </p>
+            <p>flexbox: A modern inlining technique with the most features for consistent display for irregular content</p>
+            <p>grid: A true whole of page layout technique to contain content in the same way a graphic designer would for pages on paper</p>
         </article>
         <article id="css3Layout">
             <h2>Layout Techniques</h2>
             <h3>Structures of HTML and Inline techniques combine to build the layout of a page</h3>
-            <p>static</p>
-            <p>relative</p>
-            <p>absolute</p>
-            <p>fixed</p>
+            <p>static: the default state of a element; in normal page flow, with content above affecting the element's position</p>
+            <p>relative: Takes the element ot of page flow, but leaves a space in flow, where the element would be, good for offsetting the element from its usual position</p>
+            <p>absolute: Takes element out of page flow, places the element on a new layer over layout relative to the edges of the document</p>
+            <p>fixed: The element is out of flow on a new layer and relative to the edges of the viewport or window the user sees, it will not scroll with the document, but is static</p>
         </article>        
         <article id="css3Variables">
             <h2>CSS Variables</h2>
@@ -379,13 +387,17 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
         <article id="input">
             <h2>Input</h2>
             <h3>HTML5 increases data entry methods and provide a framework for validating and providing instant user feedback</h3>
+            <p></p>
+          </p>
         </article>   
         <article id="inputForm">
             <h2>Forms</h2>
             <h3>The only method available on the web for user input of values. Generally via an HTTP post. </h3>
-            <p>method</p>
-            <p>action</p>
-            <p>target</p>
+            <p>Forms have traditionally acted like complex hyperlinks, redirecting the user to a new page complying with a few attributes</p>
+            <p>The method attribute ovverides the default behaviour and do a HTTP POST instead of GET, otherwise all form data is sent in the header instead of the body</p>
+            <p>action has a value which is the URL that sends the form data, and thus the end user will be redirected to this new page</p>
+            <p>Setting a target attribute allows the HTTP reqested page after form submit, to be redirected to alternative locations within or outside current page</p>
+            <p>One can use a named target iframe to make the request look like an AJAX request, but have server content "look" like its embedded in the existing web page</p>
         </article>
         <article id="inputFields">
             <h2>Fields</h2>
@@ -464,21 +476,21 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
         </article>
         <article id="javascriptDocumentObjectModel">
             <h2>DOM</h2>
-            <h3>Is Cool I don't know what this does</h3>
+            <h3>The Document Object Model is a representation of the entire html structure, using a JavaScript Notation, with the document object at its base</h3>
             <p></p>
             <p></p>
             <p></p>
         </article>
         <article id="javascriptDynamicStyling">
             <h2>Ovveride CSS styles dynamically</h2>
-            <h3></h3>
+            <h3>Style can be written into the DOM taking precedence over any pre-set CSS styles, dynamically altering the look of a page</h3>
             <p></p>
             <p></p>
             <p></p>
         </article>
         <article id="javascriptSelectiveDisplay">
             <h2>Selective Display</h2>
-            <h3></h3>
+            <h3>The specific use of styling to remove or show elements in the DOM, give a set of user-selectible states</h3>
             <p></p>
             <p></p>
             <p></p>
@@ -486,27 +498,35 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
         </article>
         <article id="javascriptCheckValidity">
             <h2>Form Check Validity</h2>
-            <h3></h3>
+            <h3>checkValidity() is a function that looks a the pattern attribute and will return a true or false</h3>
             <p></p>
             <p></p>
             <p></p>
         </article>
         <article id="javascriptWindowControls">
             <h2>Window Object</h2>
-            <h3></h3>
+            <h3>The window object has control over all the external influences that can occur to a document as the user interacts with content</h3>
             <p>Scroll</p>
             <p>events</p>
             <p>navigate</p>
         </article>
         <article id="javascriptEvents">
             <h2>Event Model</h2>
-            <h3></h3>
-            <p>In HTML</p>
-            <p>In JavaScript</p>
+            <h3>Everything a user does to chage the state of the DOM needs to be registered beforehand, and actions </h3>
+            <p><b>on<i>event</i></b> (where <i>event</i> is an event name) as an HTML attribute to register an event. It is not recommended, but it is a direct way of embedding the event close to where it is actioned</p>
+            <p>In JavaScript addEventListener is a method one can apply to document or window objects to register a functional act that will occur when the event is triggered</p>
             <p></p>
             <p></p>
         </article>
-
+        <article id="javascriptConsole">
+            <h2>JavaScript Console</h2>
+            <h3>The console is an interactive shell allowing JavaScript code to be executed by the user</h3>
+            <p>Debugging with the console.log('value') structure is commonplace, and allows us to test the state of code as it runs</p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </article>
+          
 <!-- Effects -->
 
 
@@ -518,31 +538,31 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
         </article>
         <article id="effectsCssanimations">
             <h2>CSS Animations</h2>
-            <h3></h3>
+            <h3>The transition style coupled with the @keyframe at rule can create complex animations when a pseudo-class or JavaScript event triggers</h3>
             <p></p>
             <p></p>
         </article>
         <article id="effectsSvg">
             <h2>SVG</h2>
-            <h3></h3>
-            <p></p>
+            <h3>Scaleable Vector Graphics are resolution independant files or document structures that can do line art</h3>
+            <p>Much better than GIF</p>
             <p></p>
         </article>
         <article id="effectsCanvas">
             <h2>Canvas</h2>
-            <h3></h3>
+            <h3>A drawing framework centered around a set of JavaScript objects</h3>
             <p></p>
             <p></p>
         </article>
         <article id="effectsWebgl">
             <h2>Web GL</h2>
-            <h3></h3>
+            <h3>A library for the display and manipulation of objects in 3D space</h3>
             <p></p>
             <p></p>
         </article>
         <article id="effectsAudio">
             <h2>Web Audio API</h2>
-            <h3></h3>
+            <h3>In-built synthesizer for use in-browser</h3>
             <p></p>
             <p></p>
         </article>
@@ -552,55 +572,79 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
 
         <article id="localstorage">
             <h2>Persistence</h2>
-            <h3></h3>
-            <p></p>
+            <h3>The web client has a small amount of memory available to store user state between pages or page reloads</h3>
+            <p>The benefit to the user is to provide some resilience to slow or no server connections or unintended page refreshes</p>
             <p></p>
         </article>
         <article id="localstorageSessionstorage">
             <h2>Session Storage</h2>
-            <h3></h3>
+            <h3>Only survives as long as the window that contains the document stays open</h3>
             <p></p>
             <p></p>
         </article>
         <article id="localstorageLocalstorage">
             <h2>Local Storage</h2>
-            <h3>Supports persistence and offline functionality inside the already loaded HTML5 page</h3>
-            <p>Maintain Persistence</p>
-            <p>URL Parameters</p>
-            <p>Browser Storage</p>
+            <h3>Survives intact for the domain the page was loaded from, as long as the browser stays open</h3>
+            <p></p>
+            <p></p>
+            <p></p>
         </article>
         <article id="localstorageGlobalvariables">
             <h2>Global Variables</h2>
-            <h3></h3>
+            <h3>Frowned on in programming circles, but can be useful in maintining persistence between functions without parameter passing</h3>
             <p></p>
             <p></p>
         </article>
-
+        <article id="localstorageURLparameters">
+            <h2>URL parameters</h2>
+            <h3>Are key value pairs that reside in the address bar, but can be pulled into the DOM used and manipulated in subsiquent requests</h3>
+            <p></p>
+            <p></p>
+        </article>
+          
+          
 <!-- AJAX -->
 
 
         <article id="ajax">
             <h2>AJAX</h2>
-            <h3>AJAX defines a way of connecting to a server without reloading the page</h3>
-            <p>XMLHttpRequest</p>
-            <p>GET</p>
-            <p>POST</p>
+            <h3>AJAX defines a way of connecting to a server without navigating away from the currently loaded page</h3>
+            <p>The goal of web development is creating a separation between user interface and application state. This can easily be implemented using RESTful web services on the server side</p>
+            <p>The client can acquire and contribute to state within the rules a web service will allow</p>
         </article>
-        <article id="ajaxLoad">
+        <article id="ajaxGet">
             <h2>HTTP GET</h2>
-            <h3></h3>
+            <h3>A GET request from the server is the most common method of acquiring </h3>
             <p></p>
             <p></p>
         </article>
         <article id="ajaxPost">
             <h2>HTTP POST</h2>
-            <h3></h3>
+            <h3>Postdata is generally the submission of form, which allows to be a part of the payload instead of header</h3>
+            <p></p>
+            <p></p>
+        </article>
+        <article id="ajaxPut">
+            <h2>HTTP PUT</h2>
+            <h3>Equiv. New</h3>
+            <p></p>
+            <p></p>
+        </article>
+        <article id="ajaxPatch">
+            <h2>HTTP PATCH</h2>
+            <h3>Equiv. Update</h3>
+            <p></p>
+            <p></p>
+        </article>
+        <article id="ajaxDelete">
+            <h2>HTTP DELETE</h2>
+            <h3>Equiv. Delete</h3>
             <p></p>
             <p></p>
         </article>
         <article id="ajaxJson">
             <h2>JSON</h2>
-            <h3></h3>
+            <h3>JavaScript Object Notation is a data structure that can easily be walked across with JavaScript code</h3>
             <p></p>
             <p></p>
         </article>
@@ -623,7 +667,7 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
         </article>
         <article id="hwGeolocation">
             <h2>Geolocation</h2>
-            <h3></h3>
+            <h3>Lat and Long information from the browser</h3>
             <p></p>
             <p></p>
         </article>

@@ -10,6 +10,7 @@ window.onload = function() {
 
     // enable the target page from URL, otherwise show the home page
     var locale = window.location.href.substring(window.location.href.indexOf('#')+1);
+    console.log(locale);
     if(locale.length > 0) {
         document.getElementById(locale).style.display = 'block';
     } else {
