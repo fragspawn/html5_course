@@ -4,6 +4,14 @@
     <script src="./js/microsite.js"></script>
     <title>HTML5 Microsite</title>
     <link rel="stylesheet" href="./css/microsite.css">
+    <!-- 3rd Party JS -->
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <!-- Code highlighter -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 </head>
 <body>
     <header>
@@ -119,19 +127,25 @@
             <h3>HTML5 is a suite of technologies that work together to present information in a platform independant way</h3>
             <p>A foundation is markup, a declaration of content inside structural elements. Usually opening and closing tags</p> 
             <pre class="preHTML">
-<span style='color:#a65700;'>&lt;</span><span style='color:#5f5035; '>article</span><span style='color:#a65700; '>></span>Value<span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>article</span><span style='color:#a65700; '>></span>
+                <code class="xml hljs">
+&lt;article&gt;Content&lt;/article&gt;
+                </code>
             </pre>
             <p>Style is declared separately usually in another file that references the element and describes it's visual features</p>
             <pre class="preCSS">
-article <span style='color:#800080; '>{</span>
-<span style='color:#e34adc; '>&#xa0;&#xa0;&#xa0;&#xa0;style:</span> value<span style='color:#800080; '>;</span>
-<span style='color:#800080; '>}</span>
+                <code class="css hljs">
+article {
+    style: value;
+}
+                </code>
             </pre>
             <p>JavaScript can used to manipulate markup after all web objects have been loaded. In order to dynamically alter elements</p>
             <pre class="preJS">
-<span style='color:#800000; font-weight:bold; '>function</span> namedAction<span style='color:#808030; '>(</span>parameter<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-&#xa0;&#xa0;&#xa0;&#xa0;parameter<span style='color:#808030; '>.</span>value <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>newvalue</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span>
-<span style='color:#800080; '>}</span>
+                <code class="javascript hljs">
+function namedAction(parameter) {
+    parameter.value = 'newvalue';
+}
+                </code>
             </pre>
             <p>Most web sites mix and match variying amounts of three components in different ways to create complex web interfaces</p>
             <aside>

@@ -1,4 +1,14 @@
 window.onload = function() {
+    // Is Mobile true or false
+    var bMobile = 
+        navigator.userAgent.indexOf( "Mobile" ) !== -1 || 
+        navigator.userAgent.indexOf( "iPhone" ) !== -1 || 
+        navigator.userAgent.indexOf( "Android" ) !== -1 || 
+        navigator.userAgent.indexOf( "Windows Phone" ) !== -1;
+
+    // Load code highlighter
+    hljs.initHighlightingOnLoad();
+
 
     // get all the links in the DOM and add an event to display the associated article.
     var menuListItems = document.getElementsByTagName('a');
@@ -10,7 +20,6 @@ window.onload = function() {
 
     // enable the target page from URL, otherwise show the home page
     var locale = window.location.href.substring(window.location.href.indexOf('#')+1);
-    console.log(locale);
     if(locale.length > 0) {
         document.getElementById(locale).style.display = 'block';
     } else {
