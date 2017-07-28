@@ -211,11 +211,39 @@ function namedAction(parameter) {
     &lt;body&gt;    
 &lt;/html&gt;
             </code></pre>
-
-            <p></p>
             <aside>
-                <h3>Exercise: Find other elements that are inline</h3>
+                <h3>Exercise: Find other elements that are naturally inline</h3>
                 <p>Browse the Internet looking for elements in HTML5 that are inline</p>
+            </aside>
+            <h3>A core activity in CSS Styling, is to change block elements to inline groups</h3>
+            <code><pre>
+&lt;ul&gt;
+    &lt;li&gt;
+       	menu1 
+    &lt;/li&gt;
+    &lt;li&gt;
+       	menu2 
+    &lt;/li&gt;
+    &lt;li&gt;
+       	menu3 
+    &lt;/li&gt;
+&lt;ul&gt;
+            </code></pre>
+            <p>The CSS (below) would change a bullet list of HTML content (above)</p>
+            <code><pre>
+ul {
+	display: block;
+}
+li {
+	display: inline-block;
+	list-style: none;
+}
+            </code></pre>
+            <p>Into a horizontal list without bullets</p>
+            <aside>
+                <h3>Exercise: Research other techniques that change blocks of content to inline</h3>
+                <p>Browse the Internet looking for display: styles in CSS that override block behaviour</p>
+                <p>The techniques used are sometimes complex and esoteric, as HTML designers try to process layout with techniques never designed to do this</p>
             </aside>
         </article>
         <article id="sementicBlock">
@@ -225,9 +253,37 @@ function namedAction(parameter) {
             <p>Much of CSS styling is an attempt to ovveride the natural flow, primarally adding whitespace, using the box model, and inlining</p>
             <p>While the <b>&lt;span&gt;</b> element is quintessential for inlining <b>&lt;div&gt;</b> it it's block equivalent</p>
             <p>All sementic elements are block in their behaviour</p>
+			<aside>
+				<span>NOTE</span>
+				<p>Block Elements occupy no height if the element contains no inline contnet</p>
+			</aside>
+            <code><pre>
+&lt;section&gt;
+    &lt;div&gt;
+       	block1 
+    &lt;/div&gt;
+    &lt;div&gt;
+       	block2 
+    &lt;/div&gt;
+    &lt;div&gt;
+       	block3 
+    &lt;/div&gt;
+&lt;/section&gt;
+            </code></pre>
+			<p>The above shows a container section with three elements inside</p>
+            <code><pre>
+section {
+	width: 100%;
+}
+section div {
+	float: left;
+}
+            </code></pre>
+			<p>The above CSS changes the behaviour from content displayed one on top to side-by-side from the left</p>
             <aside>
-                <h3>Exercise: How would you make block elements go inline</h3>
-                <p>Browse this Internet looking for techniques that bring block elements so they are side-by-side</p>
+                <h3>Exercise: What are the primary shortcomings of the float styling</h3>
+                <p>float: is a replacement for the align attribute of the img element. It would define the way text should flow around elements</p>
+				<p>however the tecnique displayed above has some shortcomings, demonstrated by styling <b>border: 1px solid black</b> to the section element</p>
             </aside>
         </article>
         <article id="sementicText">
@@ -235,17 +291,17 @@ function namedAction(parameter) {
             <h3>These are block elements that ovveride a default font style, altering display characteristics</h3>
             <p>These elements can be considered a way of implementing a global style for the text in the web interface</p>
             <p>Limit the design to three or four styles per page, and use them consistently across all pages of the site</p>
-            <p>Heading styles have element names; largest &lt;h1&gt; to &lt;h6&gt; smallest</p>
-            <p>The paragraph style &lt;p&gt; contains body text, &lt;pre&gt; is for monospace text</p>
-            <p>There are many others for italics &lt;i&gt;, underline &lt;u&gt;, bold &lt;b&gt;, subscript &lt;sub&gt;, superscript &lt;sup&gt;, strikethrough &lt;del&gt;, highlighted &lt;mark&gt;</p>
-            <p>Text decorations (above) have an inline behaviour</p>
-            <p>Typically we define style in CSS, but these elements both define style and structure, so it is acceptable to use them in html pages</p>
-            <pre>
-<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>h1</span><span style='color:#a65700; '>></span>Heading<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>h1</span><span style='color:#a65700; '>></span>
-<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>h3</span><span style='color:#a65700; '>></span>Subheading<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>h3</span><span style='color:#a65700; '>></span>
-<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>p</span><span style='color:#a65700; '>></span>Paragraph of text with <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>b</span><span style='color:#a65700; '>></span>Bold<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>b</span><span style='color:#a65700; '>></span> word<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>p</span><span style='color:#a65700; '>></span>
-<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>pre</span><span style='color:#a65700; '>></span>Preformatted (monospace) text<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>pre</span><span style='color:#a65700; '>></span>
-            </pre>
+			<p>Heading styles have element names; largest &lt;h1&gt; to &lt;h6&gt; smallest</p>
+			<p>The paragraph style &lt;p&gt; contains body text, &lt;pre&gt; is for monospace text</p>
+			<p>There are many others for italics &lt;i&gt;, underline &lt;u&gt;, bold &lt;b&gt;, subscript &lt;sub&gt;, superscript &lt;sup&gt;, strikethrough &lt;del&gt;, highlighted &lt;mark&gt;</p>
+			<p>Text decorations (above) have an inline behaviour</p>
+			<p>Typically we define style in CSS, but these elements both define style and structure, so it is acceptable to have them display style only html pages</p>
+			<pre><code>
+&lt;h1&gt;Heading&lt;/h1&gt;
+&lt;h3&gt;Subheading&lt;/h3&gt;
+&lt;p&gt;Paragraph of text with &lt;b&gt;Bold&lt;/b&gt;word&lt;/p&gt;
+&lt;pre&gt;Preformatted (monospace) text&lt;/pre&gt;
+           </code></pre>
             <aside>
                 <h3>Exercise: Analysis </h3>
                 <p>In the example above which elements are inline and which are block elements</p>
@@ -257,53 +313,59 @@ function namedAction(parameter) {
         </article>
         <article id="sementicHierarchy">
             <h2>Hierarchy</h2>
-            <h3>Structure can be described by parent child relationships</h3>
+            <h3>Structure can be described by a set of parent child relationships</h3>
             <p>This enhances the meaning of content by giving it context and being more sementic</p>
             <p>An element can have only one parent, but can have many siblings and children in the hierarchy</p>
             <p>HTML: Progressively indent each time a child node is used</p>
-            <pre>
-<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>nav</span><span style='color:#a65700; '>></span>
-    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>ul</span><span style='color:#a65700; '>></span>
-        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>item <span style='color:#008c00; '>1</span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
-        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>item <span style='color:#008c00; '>2</span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
-        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>item <span style='color:#008c00; '>3</span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>li</span><span style='color:#a65700; '>></span>
-    <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>ul</span><span style='color:#a65700; '>></span>
-<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>nav</span><span style='color:#a65700; '>></span>
-            </pre>
+            <pre><code>
+&lt;nav&gt;
+    &lt;ul&gt;
+    	&lt;li&gt;item 1&lt;/li&gt;
+    	&lt;li&gt;item 2&lt;/li&gt;
+    	&lt;li&gt;item 3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+            </code></pre>
             <p>In CSS one can style elements that reside in this hierarcial relationship</p>
-            <pre>
-<span style='color:#800000; font-weight:bold; '>nav</span> <span style='color:#800000; font-weight:bold; '>ul</span> <span style='color:#800000; font-weight:bold; '>li</span> <span style='color:#800080; '>{</span>
-    <span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>.1</span><span style='color:#006600; '>em</span> <span style='color:#008c00; '>.5</span><span style='color:#006600; '>em</span> <span style='color:#008c00; '>.1</span><span style='color:#006600; '>em</span> <span style='color:#008c00; '>.5</span><span style='color:#006600; '>em</span><span style='color:#800080; '>;</span>
-    <span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>inline-block</span><span style='color:#800080; '>;</span>
-    <span style='color:#bb7977; font-weight:bold; '>color</span><span style='color:#808030; '>:</span> var<span style='color:#808030; '>(</span>--menu-color<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-<span style='color:#800080; '>}</span>                
-            </pre>
-            <p>Javascript can look up or down the hierarchy, but childNodes is an collection of nodes. There is only one parent</p>
-            <pre>
+            <pre><code>
+nav ul li {
+    padding: .1em .5em .1em .5em;
+    display: inline-block;
+    color: var(--menu-color);
+}
+            </code></pre>
+            <p>Javascript can look up or down the hierarchy, but childNodes is an collection of nodes. There can only be one parent or adjacent sibiling</p>
+            <pre><code>
 child.parentNode         
 sibling.nextElementSibling
 sibling.previousElementSibling
 parent.childNodes[]
-            </pre>
+            </code></pre>
             <aside>
-                <h2></h2>
-                <p></p>
+                <h3>How would one loop through childNodes in JavaScript</h3>
+                <p>The structure needs a for loop to accomplish the task</p>
             </aside>
         </article>
         <article id="sementicAccessibility">
             <h2>Accessibility</h2>
             <h3>Accessible browsers have little concern for the stylistic or interactive components of a web interface</h3>
             <p>The prime concern for web develelopers is allowing disabled users to view content and navigate it, skipping irrelevant meta-information</p>
-            <p>Skip to Content</p>
-            <p>Skip to Navigation</p>
+            <p>Skip to Content - placed at the top of the body tag, to allow navigation to the uniuqe elements of the page</p>
+            <p>Skip to Navigation - Alternative for particularly complex sites that have a complete accessible navigation in the footer</p>
+			<p>Both elements above are often styled with <b>display: none;</b> to remove them from the visual design</p>
+			<p>Each link must direct the screen reader, or text browser to an internal target inside the html. This target has a unique <b>id="value"</b> attribute that is nowhere else in the document</p>
+            <pre><code>
+&lt;a href="#start_content" class="hidden"&gt;Skip to Content&lt;/a&gt;
+&lt;a href="#start_navigation" class="hidden"&gt;Skip to Navigation&lt;/a&gt;
+            </pre></code>
+			<p>The above links should not target sementic elements, but be an ID target. That being the only named target in the DOM, screen readers may not abide by styling that would hide these links in mainstream browsers</p>
             <aside>
                 <h3>Exercise</h3>
-                <p>What attribute assigns a definable keyboard shortcut to a href hyperlink?</p>
+                <p>What attribute assigns a definable keyboard shortcut to activate a href hyperlink?</p>
             </aside>
         </article>
 
 <!-- CSS3 -->
-
 
         <article id="css3">
             <h2>Cascading Style Sheets</h2>

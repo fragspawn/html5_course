@@ -116,7 +116,7 @@ article p, article ul {
     min-width: 28em;
 }
 article pre, article figure {
-    margin: 4em 12em 4em 12em;
+    margin: 4em 8em 4em 12em;
     padding: 2em 2em 2em 2em;
     max-width: 38em;
     min-width: 30em;
@@ -147,6 +147,7 @@ section article aside h3 {
 }
 section article aside p {
     margin: 0;
+    padding: 0 0 1em 1em;
 }
 section article aside figure {
     margin: 0;
