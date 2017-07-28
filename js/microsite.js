@@ -14,13 +14,13 @@ window.onload = function() {
         }
     }
 
-    // enable the target page from URL, otherwise show the home page
-    var locale = window.location.href.substring(window.location.href.indexOf('#')+1);
-    if(locale.length > 0) {
-        document.getElementById(locale).style.display = 'block';
-    } else {
+    // enable the target page from URL parameter, otherwise show the home page
+	if((window.location.href.indexOf('#')) == -1) {
         document.getElementById('html5').style.display = 'block';
-    }
+	} else {
+    	var locale = window.location.href.substring(window.location.href.indexOf('#')+1)
+        document.getElementById(locale).style.display = 'block';
+	}
 
     // Handle display of sidemenu;
     window.addEventListener('scroll', function() {
@@ -35,6 +35,7 @@ window.onload = function() {
 function showArticle() {
     hideAllArticles();
     document.getElementById(this.href.substring(this.href.indexOf('#')+1)).style.display = 'block';
+	window.scrollTo(0, 0)
 }
 
 function hideAllArticles() {

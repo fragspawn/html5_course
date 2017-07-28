@@ -4,13 +4,19 @@
     <script src="./js/microsite.js"></script>
     <title>HTML5 Microsite</title>
     <link rel="stylesheet" href="./css/microsite.css">
+    <!-- favicon -->
+	<link rel="icon" 
+      	 type="image/ico" 
+         href="./img/favicon.ico" />
+
+
     <!-- 3rd Party JS -->
     <!-- JQuery -->
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-    <!-- Code highlighter -->
 
+    <!-- Code highlighter -->
     <link rel="stylesheet" href="./js/highlight.js/atom-one-dark.css">
     <script src="./js/highlight.js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
@@ -20,13 +26,13 @@
         <nav id="topnav">
             <ul>
                 <li><a href="#html5"><img src="./img/HTML5_1Color_Black.png" alt="HTML5"/></a></li>
-                <li><a href="#sementic"><img src="./img/HTML5_Semantics_32.png" alt="Sementics"/><span>Sementics</span></a>
+                <li><a href="#semantic"><img src="./img/HTML5_Semantics_32.png" alt="Sementics"/><span>Sementics</span></a>
                     <ul>
-                        <li><a href="#sementicInline">Inline Elements</a></li>
-                        <li><a href="#sementicBlock">Block Elements</a></li>
-                        <li><a href="#sementicText">Text Elements</a></li>
-                        <li><a href="#sementicHierarchy"> Hierarchy</a></li>
-                        <li><a href="#sementicAccessibility">Accessibility</a></li>
+                        <li><a href="#semanticInline">Inline Elements</a></li>
+                        <li><a href="#semanticBlock">Block Elements</a></li>
+                        <li><a href="#semanticText">Text Elements</a></li>
+                        <li><a href="#semanticHierarchy"> Hierarchy</a></li>
+                        <li><a href="#semanticAccessibility">Accessibility</a></li>
                     </ul>
                 </li>    
                 <li><a href="#css3"><img src="./img/HTML5_Styling_32.png"/ alt="CSS3"><span>CSS3</span></a>
@@ -40,6 +46,8 @@
                         <li><a href="#css3Layout">Layout Techniques</a></li>
                         <li><a href="#css3Variables">Variables</a></li>
                         <li><a href="#css3Responsive">Responsive Design</a></li>
+                        <li><a href="#css3PseudoClasses">Pseudo Classes</a></li>
+                        <li><a href="#css3GridLayout">Grid Layout</a></li>
                     </ul>
                 </li>    
                 <li><a href="#input"><img src="./img/CURSOR_32.png" alt="Input"/><span>Input</span></a>
@@ -84,6 +92,8 @@
                         <li><a href="#localstorageLocalstorage">Local Storage Object</a></li>
                         <li><a href="#localstorageGlobalvariables">Declaring Global Variables</a></li>
                         <li><a href="#localstorageURLparameters">Access URL parameters</a></li>
+                        <li><a href="#localstorageWebWorkers">Web Workers</a></li>
+                        <li><a href="#localstorageURLparameters">Web URL Parameters</a></li>
                     </ul>
                 </li>  
                 <li><a href="#ajax"><img src="./img/HTML5_Connectivity_32.png" alt="AJAX"/><span>AJAX</span></a>
@@ -94,7 +104,6 @@
                         <li><a href="#ajaxPatch">Patch</a></li>
                         <li><a href="#ajaxDelete">Delete</a></li>
                         <li><a href="#ajaxJson">JSON</a></li>
-                      
                     </ul>
                 </li>    
                 <li><a href="#hw"><img src="./img/HTML5_Device_Access_32.png" alt="Hardware"/><span>Hardware</span></a>
@@ -111,7 +120,7 @@
         <nav id="sideMenu">
             <ul>
                 <li><a href="#html5"><img src="./img/HTML5_1Color_Black.png" alt="HTML5"/></a></li>
-                <li><a href="#sementic"><img src="./img/HTML5_Semantics_32.png" alt="Sementics"/></a>
+                <li><a href="#semantic"><img src="./img/HTML5_Semantics_32.png" alt="Sementics"/></a>
                 <li><a href="#css3"><img src="./img/HTML5_Styling_32.png"/ alt="CSS3"></a>
                 <li><a href="#input"><img src="./img/CURSOR_32.png" alt="Input"/></a>
                 <li><a href="#multimedia"><img src="./img/HTML5_MultiMedia_32.png" alt="Multimedia"/></a>
@@ -123,7 +132,7 @@
             </ul>   
         </nav>
     </section>
-    <section>
+    <section id="maincontent">
         <article id="html5">
             <h2>HTML5</h2>
             <h3>HTML5 is a suite of technologies that work together to present information in a platform independant way</h3>
@@ -149,7 +158,7 @@ function namedAction(parameter) {
                 <p>Browse this microsite and look at how it's constructed via Google Developer Tools</p>
                 <figure>
                     <img src="./img/ex1_1_developer_tools.png"/>
-                    <figcaption>Press F12 to open Developer tools in Google Chrome<figcaption>
+                    <figcaption>Press F12 (or ctrl+shift+i)to open Developer tools in Google Chrome<figcaption>
                 </figure>
                 <address>
                     <a href="http://google.com.au/chrome">Download Google Chrome Here</a>
@@ -160,7 +169,7 @@ function namedAction(parameter) {
 <!-- SEMENTIC -->
 
 
-        <article id="sementic">
+        <article id="semantic">
             <h2>Sementics</h2>
             <h3>HTML markup embodies information structured in a meaningful way using descriptive elements sorrounding content</h3>
             <p>New HTML5 elements have been reserved in the web context, that being; header, footer, nav(igation), article and aside</p>
@@ -191,7 +200,7 @@ function namedAction(parameter) {
                 <a href="https://www.w3.org/TR/html5/sections.html">Reference: W3C wiki, Sementic Elements</a>
             </address>
         </article>
-        <article id="sementicInline">
+        <article id="semanticInline">
             <h2>Inline Elements</h2>
             <h3>Are designated to flow across and then down the page occupying as much space as there is content</h3>
             <p>Applying a height and width to an inline object is not possible, one must place inline elements in a block container</p>
@@ -246,11 +255,11 @@ li {
                 <p>The techniques used are sometimes complex and esoteric, as HTML designers try to process layout with techniques never designed to do this</p>
             </aside>
         </article>
-        <article id="sementicBlock">
+        <article id="semanticBlock">
             <h2>Block Elements</h2>
             <h3>By default occupy the entire width of the screen, having their own horizontal and vertical space</h3>
             <p>If unstyled, block elements, and their inline content would flow from left to right, and down the page</p>
-            <p>Much of CSS styling is an attempt to ovveride the natural flow, primarally adding whitespace, using the box model, and inlining</p>
+            <p>Much of CSS styling is an attempt to override the natural flow, primarally adding whitespace, using the box model, and inlining</p>
             <p>While the <b>&lt;span&gt;</b> element is quintessential for inlining <b>&lt;div&gt;</b> it it's block equivalent</p>
             <p>All sementic elements are block in their behaviour</p>
 			<aside>
@@ -286,9 +295,9 @@ section div {
 				<p>however the tecnique displayed above has some shortcomings, demonstrated by styling <b>border: 1px solid black</b> to the section element</p>
             </aside>
         </article>
-        <article id="sementicText">
+        <article id="semanticText">
             <h2>Text Elements</h2>
-            <h3>These are block elements that ovveride a default font style, altering display characteristics</h3>
+            <h3>These are block elements that override a default font style, altering display characteristics</h3>
             <p>These elements can be considered a way of implementing a global style for the text in the web interface</p>
             <p>Limit the design to three or four styles per page, and use them consistently across all pages of the site</p>
 			<p>Heading styles have element names; largest &lt;h1&gt; to &lt;h6&gt; smallest</p>
@@ -311,7 +320,7 @@ section div {
                 <p>Discuss the best four text elements for a text chat system</p>
             </aside>
         </article>
-        <article id="sementicHierarchy">
+        <article id="semanticHierarchy">
             <h2>Hierarchy</h2>
             <h3>Structure can be described by a set of parent child relationships</h3>
             <p>This enhances the meaning of content by giving it context and being more sementic</p>
@@ -341,12 +350,16 @@ sibling.nextElementSibling
 sibling.previousElementSibling
 parent.childNodes[]
             </code></pre>
-            <aside>
-                <h3>How would one loop through childNodes in JavaScript</h3>
-                <p>The structure needs a for loop to accomplish the task</p>
-            </aside>
+			<aside>
+				<h3>Exercise: Make one side of a Rubik's Cube</h3> 
+				<p>Cube with nine square elements in groups of three</p>
+				<p>A parent container constrains the whole into a square</p>
+				<p>Each cell needs to be square</p>
+				<p>Randomly display five of the six possible colors in each of the nine squares</p>
+				<p>Give a black background, darkgrey border, and use box model to stand off each cube from the other</p>
+			</aside>
         </article>
-        <article id="sementicAccessibility">
+        <article id="semanticAccessibility">
             <h2>Accessibility</h2>
             <h3>Accessible browsers have little concern for the stylistic or interactive components of a web interface</h3>
             <p>The prime concern for web develelopers is allowing disabled users to view content and navigate it, skipping irrelevant meta-information</p>
@@ -371,89 +384,194 @@ parent.childNodes[]
             <h2>Cascading Style Sheets</h2>
             <h3>An attachment to HTML refining presentation characteristics by defining style attributes across web documents</h3>
             <p>Stylesheets cascade from general (least important) to specific (most important). This precedence system takes a while to master</p>
+            <pre><code>
+&lt;html&gt;
+    &lt;head&gt;
+    	&lt;li&gt;item 3&lt;/li&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    	&lt;div style="height: 12em; width: 24em;"&gt;contentitem&lt;/li&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+			<p>Styles in HTML take precedence over any attached stylesheet. This technique is frowned upon, but when applying a JavaScript action (below).</p>
+            <pre><code>
+document.getElementById('element_id').style.backgroundColor = 'red';
+            </pre></code>
+			<p>The styling will be inserted as an attribute of the target element in HTML (above)</p>
+            <pre><code>
+#single_piece_of_content {
+    background-color: var(--content-background-color);
+}
+.class_of_content {
+    background-color: var(--content-background-color);
+}
+            </code></pre>
+			<p>IDs take precedence over a class of elements</p>
+            <pre><code>
+h1 {
+    color: var(--heading-color);
+}
+.class_oc_content h1 {
+    color: var(--heading-highlight-color);
+}
+            </code></pre>
+			<p>A more specific styling takes precedence over the simplistic one</p>
         </article>
         <article id="css3Elements">
             <h2>Elements</h2>
             <h3>Elements can be described in CSS by using the common naming scheme</h3>
-            <p>Sementially described html </p>
-            <p>They can only be valid HTML tags </p>
-            <pre>
-HTML Element:
-            </pre>
-            <pre>
-CSS Element:
-            </pre>
-            <pre>
-JavaScript Element:
-            </pre>              
+            <p>Sementially described html should be used in preference to classes of elements, because targetting them in CSS with their heirarchy location can be more semantic</p>
+            <p>However we should only use valid HTML tags as a part of the W3C specification</p>
+            <pre><code>
+&lt;aside&gt;Some content goes here&lt;/aside&gt;
+            </code></pre>
+            <pre><code>
+aside {
+	padding: 2em;
+	border: solid grey 1px;
+	margin: 0 auto;
+}
+            </code></pre>
+            <pre><code>
+var arrayOfElements = document.getElementsByTagName('aside');
+            </code></pre>
         </article>
         <article id="css3Classes">
             <h2>Classes</h2>
             <h3>Are attributes added to elements that give the HTML document additional meaning</h3>
-            <p></p>
-            <pre>
-HTML Class:
-            </pre>
-            <pre>
-CSS Class:
-            </pre>
-            <pre>
-JavaScript Class:
-            </pre>        
+            <p>These are particularly useful when targetting elements that might be found in different places of the document</p>
+            <pre><code>
+&lt;li class="navitem"&gt;Menu 1&lt;/li&gt;
+            </code></pre>
+            <pre><code>
+.navitem {
+	display: inline-block;
+	padding: .5em 2em .5em 0em;
+	background-color: black;
+	color: white;
+}
+            </code></pre>
+            <pre><code>
+var arrayOfElements = document.getElementsByClassName('navitem');
+            </code></pre>
+            <aside>
+                <h3>Exercise: How would one loop through arrayOfElements in JavaScript</h3>
+                <p>The structure needs a for loop to accomplish the task</p>
+            </aside>
         </article>
         <article id="css3Ids">
             <h2>IDs</h2>
-            <h3>An attribute that more accurately specifies an element. Only one ID per page is allowed</h3>
-            <p>Traditionlly used for creating <b>a href</b> links to target points within a page (think wikipedia), but be applied for a wider set of purposes</p>
+            <h3>An attribute that more accurately specifies an element. Only one ID per document should be used</h3>
+            <p>Traditionlly used for creating <b>a href</b> that links to target points within the document (think wikipedia), but can now be applied in a wider set of situations</p>
             <p>Any element can possess an ID and is the easiest way to reference in JavaScript. CSS sees IDs as having greater importance, as it defines a single specific point in the document</p>
-            <p>IDs have been traditionally be used to target a location within a webpage using a hyperlink</p>
             <p>HTML; IDs are declaired as attributes to elements</p>
-            <pre>
-<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>nav</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"sideMenu"</span><span style='color:#a65700; '>></span>
-            </pre>
+            <pre><code>
+&lt;nav id="sideMenu"&gt;
+            </code></pre>
             <p>CSS; IDs have a prefixing hash applied to the selector</p>
-            <pre>
-<span style='color:#808030; '>#</span>sideMenu <span style='color:#800080; '>{</span>
-    <span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>42</span><span style='color:#800080; '>;</span>
-    <span style='color:#bb7977; font-weight:bold; '>position</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>fixed</span><span style='color:#800080; '>;</span>
-    <span style='color:#bb7977; font-weight:bold; '>left</span><span style='color:#808030; '>:</span> <span style='color:#808030; '>-</span><span style='color:#008c00; '>42</span><span style='color:#800080; '>;</span>
-    <span style='color:#bb7977; font-weight:bold; '>top</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>240</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span>
-    <span style='color:#bb7977; font-weight:bold; '>overflow</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>hidden</span><span style='color:#800080; '>;</span>
-    <span style='color:#bb7977; font-weight:bold; '>transition</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>left</span> <span style='color:#008c00; '>.</span><span style='color:#008c00; '>2</span><span style='color:#006600; '>s</span><span style='color:#800080; '>;</span>
-<span style='color:#800080; '>}</span>
-            </pre>
+            <pre><code>
+#sideMenu {
+    width: 42;
+    position: fixed;
+    left: -42;
+    top: 240px;
+    overflow: hidden;
+    transition: left .2s;
+}
+            </code></pre>
             <p>Javascript; IDs can be described as is (third last line) or with document.getElementById method</p>
-            <pre>
-window<span style='color:#808030; '>.</span>addEventListener<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>scroll</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>window<span style='color:#808030; '>.</span>pageYOffset <span style='color:#808030; '>></span> <span style='color:#008c00; '>64</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-        document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>sideMenu</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>left <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>0</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span>
-    <span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
-        sideMenu<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>left <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>-42</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span>
-    <span style='color:#800080; '>}</span>
-<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-            </pre>            
+            <pre><code>
+window.addEventListener('scroll', function() {
+    if(window.pageYOffset > 64) {
+        document.getElementById('sideMenu').style.left = '0';
+    } else {
+        sideMenu.style.left = '-42';
+    }
+});
+            </code></pre>
+			<aside>
+				<span>NOTE</span>
+				<p>You can find the above code implemented in this document as the right menu that slides in from the right</p>
+			</aside>
         </article>
         <article id="css3Boxmodel">
             <h2>Box Model</h2>
             <h3>The combination of border, padding and margin that surrounds each block of content</h3>
+			<p>This one method of ensuring appropriate whitespace boundaries are set between on-screen components in the design</p>
             <ul>
                 <li>padding: the space between the content and the border</li>
                 <li>border: the section that separates on container from the outside</li>
                 <li>margin: the space outside the container</li>
             </ul>
+            <pre><code>
+.style_class {
+	padding-left: 1%;
+	padding-right: 2%;
+	padding-top: 3%;
+	padding-bottom: 4%;
+// is the same as 
+	padding: 3% 2% 4% 1%;
+}
+            </code></pre>
+			<p>The shorhand method (last line above) is preferred, but because adding the suffix (left, right, top, bottom) is more specific it takes precedence</p>
+            <pre><code style="css">
+#style_id {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+// is the same as 
+	margin: 0 auto; 
+}
+            </code></pre>
+			<p>The selector above centres the block object in the middle of the page, if the block's width is less than the viewport apeture</p>
+			<pre><code>
+html_element {
+    border: 20px groove pink;
+    padding: 30px;
+    border-image: url(border.png) 30px repeat;
+}
+            </code></pre>
+			<p>There are some specialised stylings that can be applied to to the box, including putting a background on the line around the element</p>	
             <figure>
                 <img src="./img/ex2_1_box_model.png"/>
                 <figcaption>Press F12 to open Developer tools in Google Chrome. Look to the bottom right<figcaption>
             </figure>
+			<aside>
+				<span>NOTE</span>
+				<p>If you want the height and width measure to include padding and border values, one must add box-sizing styling to the element (below):</p>
+			</aside>
+			<pre><code>
+box_element {
+    box-sizing: border-box;
+    border: 5px solid transparent; 
+    padding: 30px;
+}
+			</code></pre>
+			<aside>
+				<h3>Exercise: Make a set of traffic Lights</h3> 
+				<p>No inline necessary; embed the three lights red, yellow and green in a larger box with rounded white border</p>
+				<p>Each light needs to be rounded with a offset circular graduation through three hues of each color</p>
+				<p>Ensure to use padding, border and margin to layout the design so its ar portrait rectangle</p>
+				<p>center the design and put another narrower portrait rectangle to signify the pole, shade to give it dimesionality, in keeping with the lights</p>
+			</aside>
         </article>
         <article id="css3Texteffects">
             <h2>Text Effects</h2>
             <h3>CSS can extend beyond the features of built-in HTML inline text elements</h3>
             <p>Shadow</p>
             <p>Outline</p>
+			<p>Text Decoration</p>
+			<pre><code>
+a:link {
+	text-decoration: none;
+}
+			</code></pre>
+			<p>Many of us, by default remove the underline from all of our hyperlinks</p>
         </article>
         <article id="css3Inlining">
-            <h2>Inline Block Elements</h2>
+            <h2>Inlining Block Elements</h2>
             <h3>It is common practice to take blocks of content and place them inline to each other</h3>
             <p>float was a css replacement for the float attribute in the img element. Core use to contol how text flows around images. It can be used in many other situations, because of universal browser compatibility</p>
           <p>inline-block: commonly used to inline list items <b>&lt;li&gt;</b> that are usually block elements. They have in-built space a negative right margin fixes this</p>
@@ -464,10 +582,12 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
         <article id="css3Layout">
             <h2>Layout Techniques</h2>
             <h3>Structures of HTML and Inline techniques combine to build the layout of a page</h3>
-            <p>static: the default state of a element; in normal page flow, with content above affecting the element's position</p>
-            <p>relative: Takes the element ot of page flow, but leaves a space in flow, where the element would be, good for offsetting the element from its usual position</p>
-            <p>absolute: Takes element out of page flow, places the element on a new layer over layout relative to the edges of the document</p>
-            <p>fixed: The element is out of flow on a new layer and relative to the edges of the viewport or window the user sees, it will not scroll with the document, but is static</p>
+			<ul>
+            	<li><b>static:</b> the default state of a element; in normal page flow, with content above affecting the element's position</li>
+            	<li><b>relative:</b> Takes the element ot of page flow, but leaves a space in flow, where the element would be, good for offsetting the element from its usual position</li>
+            	<li><b>absolute:</b> Takes element out of page flow, places the element on a new layer over layout relative to the edges of the document</li>
+            	<li><b>fixed:</b> The element is out of flow on a new layer and relative to the edges of the viewport or window the user sees, it will not scroll with the document, but is static</li>
+			</ul>
         </article>        
         <article id="css3Variables">
             <h2>CSS Variables</h2>
@@ -479,14 +599,47 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
         <article id="css3Responsive">
             <h2>Responsive Design</h2>
             <h3>The HTML structure can be styled to accomodate different viewing environements</h3>
-            <p>A base css defines, extra css ovveriedes base selection given certain viewing curcumstances</p>
+            <p>A base css defines, extra css overriedes base selection given certain viewing curcumstances</p>
             <p>@ symbol in CSS</p>
             <p>mediaquery</p>
             <p>viewport</p>
         </article>    
+        <article id="css3PseudoClasses">
+            <h2>Pseudo Classes</h2>
+            <h3>Elements can have a state of interaction</h3>
+			<p></p>
+			<ul>
+				<li>:link - Unvisited Link</li>
+				<li>:visited - Visited link</li>
+				<li>:active - onMouseDown</li>
+				<li>:hover - onMouseOver</li>
+			</ul>
+			<aside>
+				<span>NOTE</span>
+				<p>There is no onClick pseudoclass, one must use JavaScript to accomplish this</p>
+			</aside>
+			<p></p>
+            <p></p>
+            <p></p>
+        </article>    
+        <article id="css3GridLayout">
+            <h2>Grid Layout</h2>
+            <h3>The first 2d layout technique that simulates traditional design philosophies</h3>
+			<p>Grid declares a set of horizontal and vertical slices through a parent. Only then do we place children into the grid, spanning within or across the divisions</p>
+			<aside>
+				<span>NOTE</span>
+				<p>Grid layout does not demand a precise order of elements to render. One can for example re-imagine the layout at different @media queries</p>
+			</aside>
+			<p></p>
+            <p></p>
+            <p></p>
+        </article>    
+
+
+
 
 <!-- INPUT -->
-        
+
 
         <article id="input">
             <h2>Input</h2>
@@ -498,7 +651,7 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
             <h2>Forms</h2>
             <h3>The only method available on the web for user input of values. Generally via an HTTP post. </h3>
             <p>Forms have traditionally acted like complex hyperlinks, redirecting the user to a new page complying with a few attributes</p>
-            <p>The method attribute ovverides the default behaviour and do a HTTP POST instead of GET, otherwise all form data is sent in the header instead of the body</p>
+            <p>The method attribute overrides the default behaviour and do a HTTP POST instead of GET, otherwise all form data is sent in the header instead of the body</p>
             <p>action has a value which is the URL that sends the form data, and thus the end user will be redirected to this new page</p>
             <p>Setting a target attribute allows the HTTP reqested page after form submit, to be redirected to alternative locations within or outside current page</p>
             <p>One can use a named target iframe to make the request look like an AJAX request, but have server content "look" like its embedded in the existing web page</p>
@@ -517,9 +670,11 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
         <article id="inputValidity">
             <h2>Input Validity</h2>
             <h3>CSS has pseudo selectors that give the designer scope to style certain input states</h3>
-            <p>Valid/Invalid</p>
-            <p>required</p>
-            <p>focus</p>
+			<ul>
+				<li>:valid/invalid</li>
+	            <li>:required</li>
+            	<li>:focus</li>
+			</li>
         </article>
         <article id="inputStyling">
             <h2>Input Styling</h2>
@@ -699,6 +854,12 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
             <p></p>
             <p></p>
         </article>
+        <article id="localstorageWebWorkers">
+            <h2>Web Workers</h2>
+            <h3>Persist beyond the DOM and window objects</h3>
+            <p></p>
+            <p></p>
+        </article>
         <article id="localstorageURLparameters">
             <h2>URL parameters</h2>
             <h3>Are key value pairs that reside in the address bar, but can be pulled into the DOM used and manipulated in subsiquent requests</h3>
@@ -754,8 +915,6 @@ window<span style='color:#808030; '>.</span>addEventListener<span style='color:#
         </article>
 
 <!-- Hardware -->
-
-
         <article id="hw">
             <h2>Hardware</h2>
             <h3>Web interfaces operate protected from access to the host system, with some exeptions</h3>
