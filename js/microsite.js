@@ -6,10 +6,6 @@ window.onload = function() {
         navigator.userAgent.indexOf( "Android" ) !== -1 || 
         navigator.userAgent.indexOf( "Windows Phone" ) !== -1;
 
-    // Load code highlighter
-    hljs.initHighlightingOnLoad();
-
-
     // get all the links in the DOM and add an event to display the associated article.
     var menuListItems = document.getElementsByTagName('a');
     for(i=0;i<menuListItems.length;i++) {

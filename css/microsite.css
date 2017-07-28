@@ -117,7 +117,7 @@ article p, article ul {
 }
 article pre, article figure {
     margin: 4em 12em 4em 12em;
-    padding: 2em 1em 2em 2em;
+    padding: 2em 2em 2em 2em;
     max-width: 38em;
     min-width: 30em;
     background: var(--example-background-color);

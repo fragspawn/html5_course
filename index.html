@@ -10,8 +10,10 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <!-- Code highlighter -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+    <link rel="stylesheet" href="./js/highlight.js/atom-one-dark.css">
+    <script src="./js/highlight.js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
     <header>
@@ -126,27 +128,21 @@
             <h2>HTML5</h2>
             <h3>HTML5 is a suite of technologies that work together to present information in a platform independant way</h3>
             <p>A foundation is markup, a declaration of content inside structural elements. Usually opening and closing tags</p> 
-            <pre class="preHTML">
-                <code class="xml hljs">
+            <pre><code>
 &lt;article&gt;Content&lt;/article&gt;
-                </code>
-            </pre>
+            </code></pre>
             <p>Style is declared separately usually in another file that references the element and describes it's visual features</p>
-            <pre class="preCSS">
-                <code class="css hljs">
+            <pre><code>
 article {
     style: value;
 }
-                </code>
-            </pre>
+            </code></pre>
             <p>JavaScript can used to manipulate markup after all web objects have been loaded. In order to dynamically alter elements</p>
-            <pre class="preJS">
-                <code class="javascript hljs">
+            <pre><code>
 function namedAction(parameter) {
     parameter.value = 'newvalue';
 }
-                </code>
-            </pre>
+            </code></pre>
             <p>Most web sites mix and match variying amounts of three components in different ways to create complex web interfaces</p>
             <aside>
                 <h3>Exercise: Google Developer Tools</h3>
@@ -170,10 +166,27 @@ function namedAction(parameter) {
             <p>New HTML5 elements have been reserved in the web context, that being; header, footer, nav(igation), article and aside</p>
             <p>None of the elements have any display characteristics on their own, they need to contain content, or be styled in order to inhabit a size or location</p>
             <p>HTML imposes order over content, giving it context both by being within a pair of element tags, but also having parent child relations</p>
-            <figure>
-                <img src="./img/sem_elements.gif"/>
-                <figcaption>Sementic Elements source: w3schools<figcaption>
-            </figure>
+            <pre><code>
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;nav&gt;
+                navigation elements
+            &lt;/nav&gt;
+        &lt;article&gt;
+            article content
+            &lt;aside&gt;
+                aside content
+            &lt;/aside&gt;
+        &lt;/article&gt;
+        &lt;footer&gt;
+            footer content
+        &lt;/footer&gt;            
+    &lt;body&gt;    
+&lt;/html&gt;
+            </code></pre>
             <address>
                 <a href="https://www.w3.org/TR/html5/sections.html">Reference: W3C wiki, Sementic Elements</a>
             </address>
@@ -184,6 +197,21 @@ function namedAction(parameter) {
             <p>Applying a height and width to an inline object is not possible, one must place inline elements in a block container</p>
             <p>There are very few inline elements in HTML5: <b>&lt;span&gt;</b> would be the most commonly used.</p>
             <p>Overriding the behaviour of block elements is commonplace, but inline is not the best tool, hybrid styling like inline-block and float are commonly used for compatibility reasons</p>
+            <pre><code>
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;article&gt;
+            &lt;p&gt;Paragraph content are block elements&lt;/p&gt;
+            &lt;aside&gt;
+                &lt;p&gt;Paragraph content can contain &lt;b&gt;inline&lt/b&gt; elements&lt;/p&gt;
+            &lt;/aside&gt;
+        &lt;/article&gt;
+    &lt;body&gt;    
+&lt;/html&gt;
+            </code></pre>
+
             <p></p>
             <aside>
                 <h3>Exercise: Find other elements that are inline</h3>
