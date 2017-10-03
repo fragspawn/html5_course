@@ -1,14 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
 <head>
-    <script src="./js/microsite.js"></script>
+    <script src="./js/microsite.js" defer></script>
     <title>HTML5 Microsite</title>
     <link rel="stylesheet" href="./css/microsite.css">
     <!-- favicon -->
 	<link rel="icon" 
       	 type="image/ico" 
          href="./img/favicon.ico" />
-
 
     <!-- 3rd Party JS -->
     <!-- JQuery -->
@@ -47,6 +46,7 @@
                         <li><a href="#css3Variables">Variables</a></li>
                         <li><a href="#css3Responsive">Responsive Design</a></li>
                         <li><a href="#css3PseudoClasses">Pseudo Classes</a></li>
+                        <li><a href="#css3Combinators">Combinators</a></li>
                         <li><a href="#css3GridLayout">Grid Layout</a></li>
                     </ul>
                 </li>    
@@ -110,7 +110,7 @@
                     <ul>
                         <li><a href="#hwOrientation">Orientation</a></li>
                         <li><a href="#hwGeolocation">Geolocation</a></li>
-                        <li><a href="#hwTouch">JSON</a></li>
+                        <li><a href="#hwTouch">Touch</a></li>
                     </ul>
                 </li>                             
             </ul>
@@ -135,7 +135,7 @@
     <section id="maincontent">
         <article id="html5">
             <h2>HTML5</h2>
-            <h3>HTML5 is a suite of technologies that work together to present information in a platform independant way</h3>
+            <h3>HTML5 is a suite of technologies that work together to present information in a platform independent way</h3>
             <p>A foundation is markup, a declaration of content inside structural elements. Usually opening and closing tags</p> 
             <pre><code>
 &lt;article&gt;Content&lt;/article&gt;
@@ -622,6 +622,24 @@ a:link {
             <p></p>
             <p></p>
         </article>    
+        <article id="css3Combinators">
+            <h2>Combinators</h2>
+            <h3>Compound Selectors that incorporate two related elements</h3>
+			<p></p>
+			<ul>
+				<li>(~) tilde - Next sibiling</li>
+				<li>:(+) plus - Next adjacent sibling</li>
+				<li>:(>) child - Child element</li>
+				<li>( ) space - Decendant element</li>
+			</ul>
+			<aside>
+				<span>NOTE</span>
+				<p>There is no parent combinator, css combinators don't look backwards. e.g. there is no previous sibling. One must use JavaScript to target elements prior in the DOM</p>
+			</aside>
+			<p></p>
+            <p></p>
+            <p></p>
+        </article>    
         <article id="css3GridLayout">
             <h2>Grid Layout</h2>
             <h3>The first 2d layout technique that simulates traditional design philosophies</h3>
@@ -644,8 +662,8 @@ a:link {
         <article id="input">
             <h2>Input</h2>
             <h3>HTML5 increases data entry methods and provide a framework for validating and providing instant user feedback</h3>
+            <p>Typically much of form validation remain a JavaScript development exercise, but the rules by which a form is to be used can all be defined by HTML/CSS</p>
             <p></p>
-          </p>
         </article>   
         <article id="inputForm">
             <h2>Forms</h2>
@@ -670,18 +688,29 @@ a:link {
         <article id="inputValidity">
             <h2>Input Validity</h2>
             <h3>CSS has pseudo selectors that give the designer scope to style certain input states</h3>
+            <p>The pattern attribute is related to must value entered input elements. Its value is a Regular Expression or Regex string</p>
+            <p>A regex has three components</p>
 			<ul>
-				<li>:valid/invalid</li>
-	            <li>:required</li>
-            	<li>:focus</li>
-			</li>
+				<li>[] - Must contain one of these characters</li>
+	            <li>() - Must contain these strings of characters</li>
+            	<li>{} - Must contain this quantity of characters</li>
+			</ul>
+			<pre><code>
+&lt;input type="text" size="3" pattern="([A-Z]?NSW|QLD|SA|NT|VIC|TAS|WA|ACT{2,3})"&gt;
+			</code></pre>
+			<p>More than half of the pseudo classess available in CSS are related to input fomrs here are a few:</p>
+			<ul>
+				<li>:valid/invalid - Looks at pattern attribute and other restricitve attributes to calculate validity and change display dynamcially</li>
+	            <li>:required - The requried attribute can be styled to display something unique about the form element. Mostly Used with ::after and content</li>
+            	<li>:focus - Is extra styling option that can be assigned to elements that have the cursor focused on them</li>
+			</ul>
         </article>
         <article id="inputStyling">
             <h2>Input Styling</h2>
             <h3>There are ways to denote the status of input fields, giving the user clarity fo the state of a form</h3>
-            <p>label</p>
-            <p>fieldset and Legend</p>
-            <p>inputs outside forms</p>
+            <p>label - An inline attribute that is usually associated with input elements</p>
+            <p>fieldset and Legend - Blocks that can enclose groupings of input elements</p>
+            <p>The for attribute can target the form for which the input element is related to. This enables form elements to be placed anywhere in the document</p>
         </article>           
         <article id="inputCheckbox">
             <h2>Checkboxes</h2>
@@ -727,11 +756,10 @@ a:link {
 
         <article id="javascript">
             <h2>JavaScript</h2>
-            <h3>Augments the user experience using an event model to track user actions that trigger functionality in the HTML document</h3>
+            <h3>Augments the user experience using an event model to track user actions that trigger changes in the HTML document</h3>
             <p>The document Object is a representation of the html structure as a JavaScript object. It is called the DOM</p>
             <p>The window Object relates to the browser that sorrounds the document</p>
             <p>The console Object is an interactive shell the browser has for developers to manipulate the environment in real time</p>
-            <p></p>
         </article>
         <article id="javascriptDocumentObjectModel">
             <h2>DOM</h2>
@@ -791,21 +819,21 @@ a:link {
 
         <article id="effects">
             <h2>Effects</h2>
-            <h3>Web developers have a new set of tools for rendering elements to the screen, beyond bitmap images</h3>
-            <p>CSS transitions</p>
-            <p>CSS Keyframes</p>
+            <h3>Web developers have a new set of tools that make content attractive, beyond using bitmap images</h3>
+            <p>Screen effects should be as a result of a user action. This provides necessary visual feedback</p>
+            <p>Ensure that the effect transition is fast enough to keep up with an efficient users' actions, say a third of a second in length</p>
         </article>
         <article id="effectsCssanimations">
             <h2>CSS Animations</h2>
-            <h3>The transition style coupled with the @keyframe at rule can create complex animations when a pseudo-class or JavaScript event triggers</h3>
-            <p></p>
-            <p></p>
+            <h3>The transition style coupled with the @keyframe at rule can create complex animations coupled with a pseudo-class or JavaScript event</h3>
+            <p>CSS transitions</p>
+            <p>CSS Keyframes</p>
         </article>
         <article id="effectsSvg">
             <h2>SVG</h2>
-            <h3>Scaleable Vector Graphics are resolution independant files or document structures that can do line art</h3>
-            <p>Much better than GIF</p>
-            <p></p>
+            <h3>Scaleable Vector Graphics are resolution independent files or document structures that can do line art</h3>
+            <p>SVG is describes an image in the same basic format as HTML. As such the HTML element &lt;SVG&gt; can be used inside HTML</p>
+            <p>This allows one to class and id the elemets that make up an image, not to style, but to manipulate (or animate) in JavaScript</p>
         </article>
         <article id="effectsCanvas">
             <h2>Canvas</h2>
